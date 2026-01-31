@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blood Availability</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            margin: 30px auto;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #d9534f;
+            margin-bottom: 20px;
+        }
+
+        .filters {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        select, input {
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background: #d9534f;
+            color: white;
+        }
+
+        tr:hover {
+            background: #f1f1f1;
+        }
+
+        @media (max-width: 768px) {
+            .filters {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Blood Availability</h2>
+
+    <!-- Filters -->
+    <div class="filters">
+        <select id="hospitalFilter" onchange="filterTable()">
+            <option value="">Select Hospital</option>
+
+            <?php
+            // Connect DB
+            $conn = new mysqli("localhost", "root", "", "bloodbank");
+
+            // Get hospitals
+            $hospResult = $conn->query("SELECT id, hospital_name FROM hospitals");
+
+            while ($row = $hospResult->fetch_assoc()) {
+                echo "<option value='" . $row['hospital_name'] . "'>" . $row['hospital_name'] . "</option>";
+            }
+            ?>
+        </select>
+
+        <input type="text" id="searchBlood" placeholder="Search Blood Group (e.g., A+, O-)" onkeyup="filterTable()">
+    </div>
+
+    <!-- Blood Availability Table -->
+    <table id="bloodTable">
+        <thead>
+            <tr>
+                <th>Hospital</th>
+                <th>City</th>
+                <th>Blood Group</th>
+                <th>Available Units</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <?php
+            // Fetch blood stock with hospital info
+            $sql = "
+                SELECT blood_stock.blood_type, blood_stock.available_units, 
+                       hospitals.hospital_name, hospitals.city
+                FROM blood_stock
+                INNER JOIN hospitals ON blood_stock.hospital_id = hospitals.id
+                ORDER BY hospitals.hospital_name, blood_stock.blood_type
+            ";
+
+            $result = $conn->query($sql);
+
+            while ($row = $result->fetch_assoc()) {
+                echo "
+                <tr>
+                    <td>{$row['hospital_name']}</td>
+                    <td>{$row['city']}</td>
+                    <td>{$row['blood_type']}</td>
+                    <td>{$row['available_units']}</td>
+                </tr>";
+            }
+            ?>
+        </tbody>
+    </table>
+</div>
+
+<script>
+function filterTable() {
+    let hospital = document.getElementById("hospitalFilter").value.toLowerCase();
+    let bloodSearch = document.getElementById("searchBlood").value.toLowerCase();
+    let table = document.getElementById("bloodTable");
+    let tr = table.getElementsByTagName("tr");
+
+    for (let i = 1; i < tr.length; i++) {
+        let hospitalCell = tr[i].getElementsByTagName("td")[0];
+        let bloodCell = tr[i].getElementsByTagName("td")[2];
+
+        if (hospitalCell && bloodCell) {
+            let matchesHospital = hospital === "" || hospitalCell.textContent.toLowerCase().includes(hospital);
+            let matchesBlood = bloodCell.textContent.toLowerCase().includes(bloodSearch);
+
+            tr[i].style.display = (matchesHospital && matchesBlood) ? "" : "none";
+        }
+    }
+}
+</script>
+
+</body>
+</html>

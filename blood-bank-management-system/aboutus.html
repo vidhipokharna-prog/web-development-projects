@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - Blood Bank Management</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(120deg, #fff4f4, #ffeaea);
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #c62828;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    header h1 {
+      font-size: 28px;
+      letter-spacing: 1px;
+    }
+
+    .about-section {
+      max-width: 1000px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+    }
+
+    .about-section h2 {
+      color: #c62828;
+      font-size: 26px;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    .about-section p {
+      font-size: 16px;
+      margin-bottom: 20px;
+      text-align: justify;
+      color: #444;
+    }
+
+    .mission {
+      margin-top: 30px;
+      background: #fff8f8;
+      padding: 25px;
+      border-radius: 10px;
+      border-left: 5px solid #c62828;
+    }
+
+    .mission h3 {
+      color: #c62828;
+      margin-bottom: 10px;
+    }
+
+    .team {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .team-member {
+      background: #fff4f4;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      padding: 20px;
+      width: 220px;
+      transition: transform 0.3s;
+    }
+
+    .team-member:hover {
+      transform: translateY(-5px);
+    }
+
+    .team-member img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #c62828;
+      margin-bottom: 10px;
+    }
+
+    .team-member h4 {
+      color: #c62828;
+      font-size: 18px;
+      margin-bottom: 5px;
+    }
+
+    .team-member p {
+      font-size: 14px;
+      color: #666;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #c62828;
+      color: white;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .about-section {
+        padding: 25px;
+      }
+
+      .team-member {
+        width: 100%;
+        max-width: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>About Blood Bank Management</h1>
+  </header>
+
+  <section class="about-section">
+    <h2>Who We Are</h2>
+    <p>
+      Blood Bank Management System is a digital platform designed to streamline and modernize the process of managing blood donations, donors, and recipients. 
+      Our system helps hospitals, clinics, and blood centers maintain accurate records, track inventory, and connect donors with those in need quickly and efficiently.
+    </p>
+
+    <p>
+      We aim to make the blood donation process transparent, accessible, and reliable. 
+      By leveraging technology, we ensure that every drop of donated blood is utilized effectively and reaches the people who need it the most.
+    </p>
+
+    <div class="mission">
+      <h3>Our Mission</h3>
+      <p>
+        Our mission is to save lives by creating a bridge between blood donors and recipients through a secure and efficient digital platform. 
+        We believe that technology can make a real difference in emergency situations, ensuring that blood is always available when needed.
+      </p>
+    </div>
+
+    <div class="mission">
+      <h3>Our Vision</h3>
+      <p>
+        To build a world where no life is lost due to lack of blood. 
+        We envision a connected network of donors, hospitals, and organizations collaborating seamlessly for a healthier tomorrow.
+      </p>
+    </div>
+
+    <h2 style="margin-top: 40px;">Our Team</h2>
+    <div class="team">
+      <div class="team-member">
+        <img src="data:image/png;base64,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" alt="Founder">
+        <h4>Vidhi Pokharna</h4>
+        <p>Lead Web Developer</p>
+      </div>
+      <div class="team-member">
+        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxAPEBISEBIVDxUQFhASFRAVDw8QDxUQFRIXFhUVFRUYHiggGBolGxUVITIhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGhAQGCsfHiYtLS0vLTc1Ky0tLysrLS0tLS0tLS0rLS0tLS0tKy0tLSstLS0tKy0tLS0tLS0tLSstLf/AABEIAOEA4QMBIgACEQEDEQH/xAAcAAEAAgMBAQEAAAAAAAAAAAAABAUDBgcCAQj/xABGEAACAQEFAwcGCwcDBQAAAAAAAQIDBAUREiExQVEGEyJhcYGRQnKhscHRBxYyUlNic5KTsuEUM0NjgqLwIyQ0FSU1o8L/xAAaAQEAAwEBAQAAAAAAAAAAAAAAAQIDBQQG/8QAIxEBAQACAgEDBQEAAAAAAAAAAAECEQMxEgQhMgUTM1FxYf/aAAwDAQACEQMRAD8A7iAAAAAAAAAAAAAA+SklteHa8CNO8KS8rHs1CZjb0lAr5XtDdGT8EY3e6+Z/d+hOqv8Aaz/S0BV/9X+p/d+h7je0N8WvBjVPtZ/pYgiQvGk/Kw7U0SYTUtjT7GmQpcbO49AAIAAAAAAAAAAAAAAAAAAAAAAHitVjBYyeCKe1XlKWkeiuPlP3EyL4cdy6WdotsIbXi+C1f6FbXvScvk9BeLIALaerHhxnfu9Tm5bW32vE8gEtgAAAAAPsZNaptdjwPgAm0LyqR29Ndej8Sxs1vhPTHK+D95QgjTLLhxy/xtIKGy3hOGj6S4Pb3MubPaI1FjF929dpWx5c+O49soAIZgAAAAAAAAAAAAAR7Xao01rq3sXEWy1KnHF6t7FxKGrUcm3J4tkyNuLi8ve9PVoryqPGT7ty7DEAXe2ST2gAAAI9ut1KhDPVkoLr2t8EtrZp158taksVZ482vnzSlUfZHYvSZcnPhx91Mm284GKpaacflTjHtnFetnKLXeFat+9qTn1OTy/d2ERRS3Jdx5MvXfrFbxdhha6Uvk1IS7JxftMxxlxT3egz2W2VaX7upKn5sml4bBPXfvE8XXwaBd3LOvDBVkq0eOChU9Gj8F2m5XXetG1RzUpY4YZoPScfOXt2Hq4+fDk6vurZpNABsgPdKq4PGLwZ4ALNr6xW1VFhsktq9qJZq8ZNNNaNby9sFsVRYPSS2rj1opY8fLxePvOksAEMAAAAAAAAAx1qqhFyexGQpL1tOaWVbI+mRMi/Hh5XSNaK7qScn3LguBiALuhJqagAABX33e0LJTzy6UnpCGODlL2LiybXrRhGU5PLGKcm+CS1OV31ecrVWlUlotkI/NhuXbvfWeb1PP8Abx9u6tJtjvG8Ktom51ZZnuWyMVwityIoByLbbutAAEAAABlslqnRmp05OEo7GvU+K6jECZde8HUOT18xtdPHSM4YKcOD3NfVZanJ7nvKdlrRqR1w0lHdKD2r2rrR1Sz1o1IRnB5ozSknxTOv6bm+5jq9xnZpkAB6VQ9Uqji01o0eQBsdltCqRTXY1wZmKC77Tzctdj0fvL8pY8HLh40ABDMAAAAARrfXyQb3vRdrNfJ971s08u6Prf8AiIBePbw46x2AAlsAADU+X14ZacKEXrU6UvMi9F3y/KaMWvKi189a6r2qD5tdkNH6cz7yqOL6jPz5LWsnsAAwSAAAAAAAAG8cgLwzQnQk9YdOHmN4SXc9f6jRyz5NWvmbVSlucskvNn0fW0+429Pn4ckqL06kADtsgAAC8uq0ZoYPbHTu3FGSrtrZKi4S6L79hFZ82PlivwAUeAAAA+Tlgm3u1PpFvKeFKXXp46BOM3dKKpPM2+Lb8TyAaOkAAAeK1TJGUn5KlLwWJ7IF/wA8tlrv+XUXjFr2lcrqWpcqlNybb2yxb7XqyVdV3ztNRU4YLRtyexJce/Bd57d3NWZV29JTyJYbsHjLxWBsfISglCrU3uSh3RipeuXoOA2kac01o9GtGusG5VuR8ZSlLnpLM3LDm473jxPHxMh9NL8OPvBqtQBt/wATI/TS/Dj7x8TI/TS/Dj7warUAbf8AEyP00vw4+8fEyP00vw4+8Gq1AG3/ABMj9NL8OPvHxMh9NL8OPvBqtZvGxSoVHTntSi8VsaaxT9a7iK21qtq2du42nlvZ8vMSeryyg5YYY5cGn6WU8rsf7LG0J49OUJLgtkZLv08AjTqNnq54RmvLjGXisTIV3J2eayWd/wAuC8Fh7CxO/hd4ysgAFkAAA2SzVM0Iy4peJlIFzzxp4fNb9OpPM652c1lYAAKhX31LoJcX6kywKu+9kP6vYTO2nF84qgAXe8AAAq+U/wDw6/me1FoVnKZf7Ov5j9hTl+F/lTFHQsXP3ZGEduTMvPjNyw72mu8chp42ea3xqPwcI4e3wPvIq1qVB08daUnp9SWqfjmRZWW7uarzqU9IVl04cKieKlHqeLxRwW6wABKwAAAAAAADVeXkuhRX1qj9C95ntdl5q63CSwahCTX15TUvWyfeF1c/XpTnhzdFNqG+U28deCWEe0gctrWo0Y099SSbX1I6t+OUKrnkp/wqHmv80i2Krksv9lQ8z/6Zand4vhP4woAC6AAAWlyS+WvNfrLUprlfTl2e0uSl7eHm+dAAQyCrvvyP6vYWhXX1HoRfB+tEztpxfOKcAF3vAAAK7lEsbJaPs5+osSDfixstf7Kr+Rlc/jf4mOZXbb52eoqlPatGn8mUd6ZvNxX2rXnWXI4ZXhmzYp467FvRzwseT9v/AGe0Qk3hF9Cfmvf3PB9xwG0rpAAJXAAAAAAAAVV+3yrIodHO55sI5suCS2vTi0aJeNunaKjqVNr0SWyMVsS6iXylt/P2iTTxjD/Tjwai3i+9492BVkKWup8mlhY7P9nEsiBcCwstn+yp/lRPO9x/CfxjQAF0AAAsLl+XLzfai5Km5I6zfUl6y2KXt4eb50ABDIIl6QxpS6sH4Es81I4primvEJxurtrAPso4Np7sV4Hw0dIAAAj3lHGjVXGnUX9jJBjtEcYSXGMl4pkXocdjsPp8jsR9Pn2zfOSd6c9SySfTpJLrlDyZex/qXpy2w2ydCpGpB4OPg1vT6mdGuu8IWmmpw7JR8qMuD/zUlaVMAAWAAAKXlTenMUssX06uMY8VHypexdbLC8rfCz03Ob0WxeVKW6KOc3jbZ2ipKpPbLYt0Y7orqQVtRgDzN6PsfqIVdcuiOFnorhTp/kRLMVljlpwXCMF4RRlPoMeoxAASAAAubmhhBvi/VoWBhslPLCK4L07WZilc7O7ytAAQqAACjvWjlqY7pa9+8hF9eVDPB4bY6r2lCXj3cOW8QAEtQNAAccqRwk1wbXgzySb0p5a9aPCrWXdzksPQRj5+9tgseT9qnStEMrwzPLJbmnxXaVxLulY16XnL0EEdGo2uMvqvg/YyQUZ6jUktja72W010uiPWtUY9b4L3lbKpJ7W33s8jRpqvKK2Tq2ieZ4qHRjHclgscF24lYSr1WFep5z95FKsqHxxx046eJ9M93089alH506a8ZomTd0OvYYacNAGD6BiAAASLBSz1IrctX2L/ABEcubooZY5ntl+Uis+XLxxWAAKPAAAAAABQ3lZsk8Vslqu3ei+MVpoKpFxfc+D4kytOPPxu2tg91abg3F6NHgu98uwAjXjb6Vmpyq1pqnCO2T4vYktrb3Jakyb6N6a/enI/n61Sqq2TnHmy83mweGuubj6yutnJCnRjmq2uFKPzpU1Fd2MtSqvnl5aK7cbL/tqa/iNRlXku/FQ7sX1o1utVlOWacpTk/KlKUpeL1L4/S8MvfKaY5ep10ubV+xw0jaKlXzLLgvGc4nu5LRQdoppc6m28M9OjGOOV7XGpJ+goD7GTTTTwaaafBp4pmt+len8bJPdnPU57dNBVXLfUK8VGTUai2x2ZuuPHs3FqfOcvFnxZeOc1XTwzmU3AAq74vmFni0mpVN0MccHxlwXUOLiz5MvHGbpllMZuqa+61BWiak6uPRxyUqU4p5VvdSLxww3CyUbFU0drdL7SzOK+8ptLxKCpNyblJ4uTbb4t7WeT6LH6VweMlnu5l9TnvbfbNyPp1VjTtcKi4xhGXqmT7t5HczWp1HWz83JSy83hi1s1zccDmS0aabi1slFuM12SWqL+6OXFrsslGs/2qn9bBVUvqz39kse1GeX0vDH3xXx9Tvt1gEC5r4oWynzlCeZbJR2ThLDHLOO5+vcTylll1W8u+gA+xi28Fq3uIGax2fnJpbtr7DYUsDBYbMqccN71b6yQUteHlz8r/gACGQAAAAAAACJb7Gqi00ktj9jKKUWng1g1uNoIlusSqLFaSW/j1MmVvxcvj7XprdstUKNOdSo8sKcXKUuEUvS+o4vylv8Aq2+tmljGEW1TpY6RjxfGT3vuNq+Fe9ZKcLGnhlwqVVj5X8OPZh0vumhWWPS7Dp+m4pJ5Xs5uTd1OkmEcFgj0AetiAAATKN62iCwjVnhwbzevEhgrlhjl8pKmZWdVNrXtaJrCVWfc8v5cCEAMcMcfjJC5W90ABZAeakMVgegB5ua9q1irKrSeDWkoNvJOOOsZdXXu2na7nvOna6MK1J9Gaej+VGSeEovrT/zU4VaY4S7TbPgyvd0rT+zt9C04JLhXS6OHauj9083qeLyx8p3GvDyeN1enVki6u2xZFml8p7uC94sFgUOlLWXoX6k85dq3Ly79oAAq84AAAAAAAAAAB5nJJNvRLVvqR6KHl3bHQu22Tjo1RqRi/rzWSPpkicZuyD8935eTtdpr2h/x6kprzNkF3QUV3GKyLb3EYlWTY+07smpqDOACUgAAAAAAAAAAAACPa1sMNGrKEozg8JU5RnB8JwkpRfc0mZ7XsXb7GRSEP1Jc9ujabPRrx2VqdOov6op4ekmGmfBHa3Vuqknq6U61LuVRuP8AbKJuZxM8fHKwAAUAAAAAAAAAAADTPhdrZbqq4eVOhH/2xfsNzNF+GZ/9sfXWor0t+w14fyY/0cJJVk2PtIpJsj29x2hIAASAAAAAAAAAAAAAMFr+Su32EUk2t6IjBDtHwHVsbHaI/Nr4/epQ9x0g5f8AAU/9C1r+bTfjT/Q6gcb1H5KAAMQAAAAAAAAAAA0L4af/ABsft6X5ZgGvD+SDhhIsm/uAO0JIACQAAAAAAAAAAAABGte7vI4AQ698BP7q2efR/LI6kAcf1P5aAAMAAAAAAf/Z" alt="Coordinator">
+        <h4>Ritu Kumari</h4>
+        <p>Developer</p>
+      </div>
+      <div class="team-member">
+        <img src="https://cdn-icons-png.flaticon.com/512/236/236832.png" alt="Developer">
+        <h4>Parth Suvankar</h4>
+        <p>Report Analyst</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Blood Bank Management | All Rights Reserved
+  </footer>
+</body>
+</html>

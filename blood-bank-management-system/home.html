@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blood Bank Management System</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #fff;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    /* Navbar */
+    header {
+      background-color: #e60000;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px 80px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 40px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ffe6e6;
+      border-bottom: 2px solid #fff;
+      padding-bottom: 3px;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                  url("https://images.unsplash.com/photo-1582719478250-c89cae4dc85b") center/cover;
+      color: #fff;
+      text-align: center;
+      padding: 130px 20px;
+      animation: fadeIn 1s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    .hero button {
+      background: #fff;
+      color: #e60000;
+      border: none;
+      padding: 12px 25px;
+      font-size: 1rem;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-weight: 600;
+    }
+
+    .hero button:hover {
+      background: #e60000;
+      color: #fff;
+      border: 2px solid #fff;
+    }
+
+    /* Vision Section */
+    .vision {
+      text-align: center;
+      padding: 80px 20px;
+      background-color: #ffe6e6;
+    }
+
+    .vision h3 {
+      color: #e60000;
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .vision p {
+      max-width: 800px;
+      margin: auto;
+      font-size: 1.1rem;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Cards Section */
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 80px 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 15px;
+      width: 280px;
+      text-align: center;
+      padding: 30px 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    }
+
+    .card img {
+      width: 80px;
+      margin-bottom: 20px;
+    }
+
+    .card h4 {
+      color: #e60000;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: #555;
+      font-size: 0.95rem;
+    }
+
+    /* Footer */
+    footer {
+      background: #e60000;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+      }
+
+      nav ul {
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .hero h2 {
+        font-size: 2rem;
+      }
+
+      .features {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🩸 Blood Bank Management System</h1>
+    <nav>
+      <ul>
+        <li><a href="form.html" class="btn">Donate / Request /Receiver</a></li>
+        
+        <li><a href="live blood camp.html">Live Blood Camps</a></li>
+        <li><a href="card.html">QR Generator</a></li>
+        <li><a href="blood_availability.php">Blood Availability</a></li>
+        <li><a href="dashboard.php">Dashboard</a></li>
+
+        <li><a href="contact us.html">Contact Us</a></li>
+        <li><a href="aboutus.html">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Just Donate Blood</h2>
+    <p>Do you know just one pint of blood can save up to 3 lives?</p>
+    <button onclick="window.location.href='donor.html'">Become a Donor or Receiver</button>
+
+  </section>
+
+  <section class="vision">
+    <h3>Our Vision</h3>
+    <p>
+      To create a world where no life is lost due to lack of blood. 
+      We aim to connect voluntary donors with those in need through a transparent and efficient platform.
+    </p>
+  </section>
+
+  <section class="features">
+    <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/2966/2966327.png" alt="donate">
+      <h4>Easy Donation</h4>
+      <p>Register and find nearby donation camps in just a few clicks.</p>
+    </div>
+    <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/1356/1356594.png" alt="search">
+      <h4>Find Blood Quickly</h4>
+      <p>Instantly check blood availability in nearby banks.</p>
+    </div>
+    <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/3048/3048127.png" alt="awareness">
+      <h4>Awareness Drives</h4>
+      <p>Join our live campaigns and help spread awareness about blood donation.</p>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Blood Bank Management System | Designed with ❤️ by Vidhi
+  </footer>
+
+</body>
+</html>

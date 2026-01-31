@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple Donor QR Generator</title>
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #fff5f5;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #d32f2f;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      font-size: 1.5em;
+      font-weight: bold;
+      
+    }
+    
+    .container {
+      max-width: 400px;
+      background: #fff;
+      margin: 40px auto;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .btn {
+      background-color: #d32f2f;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 95%;
+    }
+    .btn:hover { background-color: #b71c1c; }
+    #qrcode {
+      display: none;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>🩸 Donor QR Generator</header>
+<nav>
+      <ul>
+        <li><a href="home.html" class="btn">Home</a></li>
+        </ul>
+    </nav>
+  <div class="container">
+    <h2 style="color:#d32f2f;">Enter Donor ID</h2>
+
+    <form id="donorForm">
+      <input type="text" id="id" placeholder="Enter unique donor ID" required />
+      <button type="submit" class="btn">🔍 Generate QR</button>
+    </form>
+
+    <div id="qrcode"></div>
+  </div>
+
+  <!-- JS Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+  <script>
+  const form = document.getElementById("donorForm");
+  const qr = document.getElementById("qrcode");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const id = document.getElementById("id").value.trim();
+
+    if (!id) {
+      alert("Please enter your donor ID!");
+      return;
+    }
+
+    const response = await fetch(`get_donor.php?unique_id=${id}`);
+    const result = await response.json();
+
+    if (result.status === "success") {
+      qr.innerHTML = "";
+      new QRCode(qr, {
+        text: `Donor ID: ${result.data.unique_id}`,
+        width: 150,
+        height: 150,
+      });
+      qr.style.display = "block";
+    } else {
+      alert(result.message);
+      qr.style.display = "none";
+    }
+  });
+  </script>
+
+</body>
+</html>

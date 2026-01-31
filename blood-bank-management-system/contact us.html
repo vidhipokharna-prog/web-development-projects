@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - Blood Bank Management</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(120deg, #fff4f4, #ffeaea);
+      color: #333;
+    }
+
+    .contact-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
+
+    .contact-container {
+      background: #fff;
+      max-width: 900px;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .contact-info {
+      flex: 1;
+      background: #c62828;
+      color: white;
+      padding: 40px;
+    }
+
+    .contact-info h2 {
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+
+    .info-box {
+      margin-bottom: 20px;
+    }
+
+    .info-box h4 {
+      font-size: 18px;
+      margin-bottom: 8px;
+      color: #fff9f9;
+    }
+
+    .info-box p {
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .contact-form {
+      flex: 1;
+      background: #fff;
+      padding: 40px;
+    }
+
+    .contact-form h2 {
+      color: #c62828;
+      font-size: 26px;
+      margin-bottom: 20px;
+    }
+
+    .contact-form .form-group {
+      margin-bottom: 15px;
+    }
+
+    .contact-form label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: #444;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 15px;
+      outline: none;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #c62828;
+      box-shadow: 0 0 6px rgba(198, 40, 40, 0.2);
+    }
+
+    .contact-form textarea {
+      resize: none;
+      height: 100px;
+    }
+
+    .btn {
+      background: #c62828;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #a31616;
+    }
+
+    .success-message {
+      display: none;
+      margin-top: 15px;
+      color: green;
+      font-weight: 600;
+      background: #e8f9e8;
+      padding: 10px;
+      border-radius: 6px;
+      text-align: center;
+      border: 1px solid #b8e2b8;
+    }
+
+    @media (max-width: 768px) {
+      .contact-container {
+        flex-direction: column;
+      }
+      .contact-info, .contact-form {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <section class="contact-section">
+    <div class="contact-container">
+
+      <div class="contact-info">
+        <h2>Contact Information</h2>
+        <div class="info-box">
+          <h4>Address</h4>
+          <p>Blood Bank Management HQ<br>123 Red Cross Street<br>Pune, Maharashtra, India</p>
+        </div>
+
+        <div class="info-box">
+          <h4>Phone</h4>
+          <p>📞 +91 9876543210</p>
+        </div>
+
+        <div class="info-box">
+          <h4>Email</h4>
+          <p>✉️ support@bloodbank.org</p>
+        </div>
+
+        <div class="info-box">
+          <h4>Working Hours</h4>
+          <p>Mon - Sat: 9:00 AM - 6:00 PM<br>Sunday: Closed</p>
+        </div>
+      </div>
+
+      <div class="contact-form">
+        <h2>Send Us a Message</h2>
+        <form id="contactForm">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="Enter your full name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="you@example.com" required />
+          </div>
+
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" placeholder="Enter subject" required />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" placeholder="Type your message here..." required></textarea>
+          </div>
+
+          <button type="submit" class="btn">Send Message</button>
+          <div class="success-message" id="successMessage">
+            ✅ Your message has been sent successfully!
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    // JavaScript for success message
+    const form = document.getElementById('contactForm');
+    const successMsg = document.getElementById('successMessage');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevent page reload
+
+      // Optional: Validate inputs
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const subject = document.getElementById('subject').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (!name || !email || !subject || !message) {
+        alert('⚠️ Please fill in all fields before sending.');
+        return;
+      }
+
+      // Show success message
+      successMsg.style.display = 'block';
+
+      // Clear the form
+      form.reset();
+
+      // Hide message after 4 seconds
+      setTimeout(() => {
+        successMsg.style.display = 'none';
+      }, 4000);
+    });
+  </script>
+</body>
+</html>

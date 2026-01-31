@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blood Bank Management - Login</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(120deg, #ffcccc, #ffe6e6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+      width: 360px;
+    }
+
+    .login-container h2 {
+      text-align: center;
+      color: #c62828;
+      margin-bottom: 25px;
+    }
+
+    .login-container label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #555;
+    }
+
+    .login-container input,
+    .login-container select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      outline: none;
+    }
+
+    .login-container input:focus,
+    .login-container select:focus {
+      border-color: #c62828;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+
+    .controls label {
+      font-size: 14px;
+      color: #333;
+    }
+
+    .controls a {
+      color: #c62828;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .controls a:hover {
+      text-decoration: underline;
+    }
+
+    .btn {
+      display: block;
+      width: 100%;
+      background-color: #d32f2f;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s;
+      font-weight: 600;
+    }
+
+    .btn:hover {
+      background-color: #b71c1c;
+    }
+
+    .divider {
+      text-align: center;
+      color: #777;
+      margin: 20px 0;
+    }
+
+    .btn.secondary {
+      background-color: #fff;
+      color: #c62828;
+      border: 1px solid #c62828;
+    }
+
+    .btn.secondary:hover {
+      background-color: #ffe5e5;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login-container">
+    <h2>Blood Bank Login</h2>
+
+    <form>
+      <label for="username">Username</label>
+      <input type="text" id="username" placeholder="Enter your username" required />
+
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Enter your password" required />
+
+      <label for="role">Role</label>
+      <select id="role" required>
+        <option value="">Select Role</option>
+        <option value="admin">Admin</option>
+        <option value="Receiver">Staff</option>
+        <option value="donor">Donor</option>
+      </select>
+
+      <label for="branch">Branch</label>
+      <select id="branch" required>
+        <option value="">Select Branch</option>
+        <option value="main">Main / City Hospital</option>
+        <option value="north">North Blood Center</option>
+        <option value="south">South Medical Hub</option>
+      </select>
+
+      <div class="controls">
+        <label><input type="checkbox" /> Remember me</label>
+        <a href="#">Forgot password?</a>
+      </div>
+
+      <!-- ✅ Redirect to index.html when clicking -->
+      <button type="button" class="btn" onclick="window.location.href='home.html'">Log In</button>
+
+      <div class="divider">OR</div>
+
+      <button type="button" class="btn secondary" onclick="window.location.href='register.html'">Create new account</button>
+    </form>
+  </div>
+</body>
+</html>
