@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Purchased Books</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #12122b;
+      color: white;
+      padding: 30px;
+      margin: 0;
+    }
+
+    h1 {
+      text-align: center;
+      color: #00ffcc;
+      margin-bottom: 40px;
+    }
+
+    .thank-you {
+      text-align: center;
+      font-size: 18px;
+      margin-bottom: 40px;
+      color: #ccc;
+    }
+
+    .book-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .book {
+      background-color: #2a2a40;
+      border-radius: 10px;
+      padding: 20px;
+      width: 250px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.4);
+      text-align: center;
+    }
+
+    .book img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    .book h2 {
+      font-size: 16px;
+      color: #00ffcc;
+      margin: 10px 0 5px;
+    }
+
+    .book .author {
+      font-style: italic;
+      font-size: 14px;
+      color: #bbb;
+      margin-bottom: 10px;
+    }
+
+    .purchase-info {
+      font-size: 13px;
+      color: #aaa;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Your Purchased Books</h1>
+  <div class="thank-you">Thank you for your purchase! You can now enjoy your selected books.</div>
+
+  <div class="book-list">
+
+    <div class="book">
+      <img src="https://images-na.ssl-images-amazon.com/images/I/91bYsX41DVL.jpg" alt="Dune">
+      <h2>Atomic habits</h2>
+      <div class="author">by Frank Herbert</div>
+      <div class="purchase-info">Purchased on: April 18, 2025</div>
+    </div>
+
+    <div class="book">
+      <img src="https://m.media-amazon.com/images/I/81bsw6fnUiL.jpg" alt="Ender's Game">
+      <h2>Ender's Game</h2>
+      <div class="author">by Orson Scott Card</div>
+      <div class="purchase-info">Purchased on: April 18, 2025</div>
+    </div>
+
+    <div class="book">
+      <img src="https://m.media-amazon.com/images/I/91MteSqsrJL.jpg" alt="The Martian">
+      <h2>The Martian</h2>
+      <div class="author">by Andy Weir</div>
+      <div class="purchase-info">Purchased on: April 19, 2025</div>
+    </div>
+
+  </div>
+
+</body>
+</html>
+

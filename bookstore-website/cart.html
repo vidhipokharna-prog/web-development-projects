@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+
+        nav a {
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+            text-align: center;
+            display: block;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .cart-container {
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            background-color: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+        }
+
+        .cart-item img {
+            max-width: 100px;
+            border-radius: 8px;
+        }
+
+        .cart-item-details {
+            flex: 1;
+            margin-left: 15px;
+        }
+
+        .cart-item-details h3 {
+            margin: 0;
+            color: #333;
+        }
+
+        .cart-item-details p {
+            color: #777;
+        }
+
+        .cart-item-price {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .cart-summary {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        .cart-summary h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .cart-summary p {
+            font-size: 18px;
+            color: #777;
+        }
+
+        .cart-summary .total {
+            font-size: 22px;
+            font-weight: bold;
+            color: #4CAF50;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Shopping Cart</h1>
+</header>
+
+<nav>
+    <a href="fy.html">Home</a>
+    <a href="categories.html">Browse Categories</a>
+    <a href="#">Contact</a>
+</nav>
+
+<div class="cart-container">
+    <!-- Cart Item 1 -->
+    <div class="cart-item">
+        <img src="https://i.pinimg.com/originals/95/58/d6/9558d61824a0e913c26fb828abf5439b.png" alt="item1">
+        <div class="cart-item-details">
+            <h3>Item 1 - Fictional Book</h3>
+            <p>Description of the fictional book.</p>
+        </div>
+        <div class="cart-item-price">$19.99</div>
+    </div>
+
+    <!-- Cart Item 2 -->
+    <div class="cart-item">
+        <img src="http://assets.teenvogue.com/photos/588a53b9e06b68df12174324/master/pass/10.jpg" alt="item2">
+        <div class="cart-item-details">
+            <h3>Item 2 - Science Fiction Novel</h3>
+            <p>Description of the science fiction novel.</p>
+        </div>
+        <div class="cart-item-price">$24.99</div>
+    </div>
+
+    <!-- Cart Item 3 -->
+    <div class="cart-item">
+        <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1680704493i/125184532.jpg" alt="item3">
+        <div class="cart-item-details">
+            <h3>Item 3 - Mystery Thriller</h3>
+            <p>Description of the mystery thriller book.</p>
+        </div>
+        <div class="cart-item-price">$14.99</div>
+    </div>
+
+    <!-- Cart Summary -->
+    <div class="cart-summary">
+        <h2>Cart Summary</h2>
+        <p>Total Items: 3</p>
+        <p class="total">Total: $59.97</p>
+        <button style="padding: 10px 20px; background-color: #4CAF50; color: white; border: none; border-radius: 5px;">Proceed to Checkout</button>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Your Online Store</p>
+</footer>
+
+</body>
+</html>

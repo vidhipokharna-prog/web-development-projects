@@ -1,0 +1,150 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f4f4f4;
+    background-image: url(https://as1.ftcdn.net/v2/jpg/05/58/73/12/1000_F_558731213_ilx4NZvbojGEMQDAfw5W2mcJjinZqf6V.jpg);
+    background-size: cover;
+    height: fit-content;
+    background-position: center;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+header {
+    background-color: #fafa05;
+    color: rgb(10, 8, 8);
+    padding: 10px 0;
+}
+
+header .logo {
+    font-size: 24px;
+    margin-left: 20px;
+    display: inline-block;
+}
+
+header nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    float: right;
+    margin-right: 20px;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    color: rgb(16, 8, 8);
+    text-decoration: none;
+}
+
+header .search input {
+    padding: 5px;
+    width: 250px;
+}
+
+/* Main Section */
+main {
+    padding: 30px 0;
+    
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #f4f4f4;
+}
+
+.book-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.book-item {
+    background-color: rgb(244, 234, 234);
+    border: 1px solid rgb(250, 244, 244);;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    width: 200px;
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+}
+
+.book-item:hover {
+    transform: scale(1.05);
+}
+
+.book-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.book-item h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.book-item p {
+    margin: 5px 0;
+}
+
+.price {
+    font-size: 20px;
+    color: #e60000;
+}
+
+button.add-to-cart {
+    background-color: #fafa05;
+    color: rgb(16, 8, 8);
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+button.add-to-cart:hover {
+    background-color: #fafa05;
+}
+
+/* Categories */
+.categories {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.category {
+    background-color: #fafa05;
+    color: rgb(16, 8, 8);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    width: 150px;
+    transition: background-color 0.3s;
+}
+
+.category:hover {
+    background-color: #932222;
+}
+
+/* Footer */
+footer {
+    background-color: #fafa05;
+    color: rgb(16, 8, 8);
+    padding: 10px;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+}
